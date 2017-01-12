@@ -26,6 +26,9 @@ module.exports = class Include extends Liquid.Tag
     @subTemplate.then (i) ->
       context.stack ->
         Promise.resolve().then ->
+          include = {}
           for k, v of attributes
             context.set k, context.resolve v
+            include[k] = context.resolve v
+          context.set 'include', include
           i.render context

@@ -17,7 +17,7 @@ module.exports = class Liquid
   @OtherFilterArgument         = ///#{@ArgumentSeparator.source}(?:#{@StrictQuotedFragment.source})///
   @SpacelessFilter             = ///^(?:'[^']+'|"[^"]+"|[^'"])*#{@FilterSeparator.source}(?:#{@StrictQuotedFragment.source})(?:#{@FirstFilterArgument.source}(?:#{@OtherFilterArgument.source})*)?///
   @Expression                  = ///(?:#{@QuotedFragment.source}(?:#{@SpacelessFilter.source})*)///
-  @TagAttributes               = ///(\w+)\s*\:\s*(#{@QuotedFragment.source})///
+  @TagAttributes               = ///(\w+)\s*[=\:]\s*(#{@QuotedFragment.source})///
   @AnyStartingTag              = /\{\{|\{\%/
   @PartialTemplateParser       = ///#{@TagStart.source}.*?#{@TagEnd.source}|#{@VariableStart.source}.*?#{@VariableIncompleteEnd.source}///
   @TemplateParser              = ///(#{@PartialTemplateParser.source}|#{@AnyStartingTag.source})///
