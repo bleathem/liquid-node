@@ -1,7 +1,7 @@
 Liquid = require "../../liquid"
 
 module.exports = class Include extends Liquid.Tag
-  Syntax = /([a-z0-9\/\\_-]+)/i
+  Syntax = /([\.a-z0-9\/\\_-]+)/i
   SyntaxHelp = "Syntax Error in 'include' -
                     Valid syntax: include [templateName]"
 
